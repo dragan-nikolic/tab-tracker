@@ -4,6 +4,8 @@ A Vue.js / Express.js web application for keeping track of guitar tabs
 YouTube tutorial: Full Stack Web App using Vue.js & Express.js
 https://www.youtube.com/watch?v=Fa4cRMaTDUI
 
+GitHub source: https://github.com/codyseibert/tab-tracker
+
 # setup development environmnet
 
 * install node v8.5.0 (tutorial uses 8.2.1)
