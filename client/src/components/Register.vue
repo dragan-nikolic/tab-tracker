@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import AuthenticationService from '@/services/AuthenticationService'
+
 export default {
   name: 'register',
   data () {
@@ -29,22 +31,14 @@ export default {
     }
   },
 
-  watch: {
-    email (value) {
-      console.log(`email has changed ${value}`)
-    }
-  },
-
   methods: {
-    register () {
-      console.log('register button was clicked!')
+    async register () {
+      const response = await AuthenticationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data)
     }
-  },
-
-  mounted () {
-    setTimeout(() => {
-      this.email = 'hello world'
-    }, 2000)
   }
 }
 </script>
