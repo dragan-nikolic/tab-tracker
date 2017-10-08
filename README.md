@@ -1,11 +1,9 @@
 # tab-tracker
 A Vue.js / Express.js web application for keeping track of guitar tabs
 
-35'
-
 YouTube tutorial: Full Stack Web App using Vue.js & Express.js
-- Part 1 Intro: https://www.youtube.com/watch?v=Fa4cRMaTDUI
-- Part 2 Sequelize: https://www.youtube.com/watch?v=xZMwg5z5VGk
+- Part 1 Intro: https://www.youtube.com/watch?v=Fa4cRMaTDUI (DONE)
+- 14' Part 2 Sequelize: https://www.youtube.com/watch?v=xZMwg5z5VGk
 - Part 3 Login:
 - Part 4:
 - Part 5 View Song:
