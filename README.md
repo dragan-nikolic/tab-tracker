@@ -18,7 +18,20 @@ GitHub source: https://github.com/codyseibert/tab-tracker
 * install vue-cli
   * npm install -g vue-cli
 
-# dev notes
+## using Postman
 
+* you can install the tool from https://www.getpostman.com/
+* you can also install chrome extension chrome://extensions
+
+* login using dragan.d.nikolic@gmail.com
+* use Tab Tracker collection
+
+# server
+
+* start server: `npm start`
+
+for more info refer to server's package.json
+
+# client
 tab-tracker> vue init webpack client
 - this creates Vue app in the client folder, refer to its Readme for info how to use it
