@@ -35,3 +35,6 @@ for more info refer to server's package.json
 # client
 tab-tracker> vue init webpack client
 - this creates Vue app in the client folder, refer to its Readme for info how to use it
+
+- use vuetify to make nice UI ;)
+  - npm install --save vuetify
