@@ -1,7 +1,11 @@
 <template>
   <v-toolbar fixed dark class="cyan">
     </v-toolbar-title class="mr-4">
-      TabTracker
+      <span
+        class="home"
+        @click="navigateTo({name: 'home'})">
+        TabTracker
+      </span>
     </v-toolbar-title>
 
     <!-- TODO: implement Browse -->
@@ -14,11 +18,12 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <router-link to="register">
-        <v-btn flat dark>
-          Sign Up
-        </v-btn>
-      </router-link>
+      <v-btn
+        flat
+        dark
+        @click="navigateTo({name: 'register'})">
+        Sign Up
+      </v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
@@ -26,12 +31,19 @@
 <script>
 export default {
   methods: {
-    register () {
-
+    navigateTo (route) {
+      this.$router.push(route)
     }
   }
 }
 </script>
 
 <style scoped>
+.home {
+  cursor: pointer;
+}
+
+.home:hover {
+  color: blueviolet;
+}
 </style>
