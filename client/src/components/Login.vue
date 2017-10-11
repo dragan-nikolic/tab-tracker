@@ -4,7 +4,7 @@
       <div class="white elevation-2">
         <v-toolbar dark flat dense class="cyan">
           </v-toolbar-title>
-            Register
+            Login
           </v-toolbar-title>
         </v-toolbar>
 
@@ -27,8 +27,8 @@
           <v-btn 
             dark 
             class="cyan" 
-            @click="register">
-            Register
+            @click="login">
+            Login
           </v-btn>
         </div>
       </div>
@@ -40,7 +40,7 @@
 import AuthenticationService from '@/services/AuthenticationService'
 
 export default {
-  name: 'register',
+  name: 'login',
   data () {
     return {
       email: '',
@@ -50,9 +50,9 @@ export default {
   },
 
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
@@ -70,8 +70,6 @@ export default {
   }
 }
 </script>
+
 <style scoped>
-  .error {
-    color: black;
-  }
 </style>
