@@ -15,7 +15,9 @@
 </template>
 
 <script>
+import SongService from '@/services/SongService'
 import Panel from '@/components/Panel'
+
 export default {
   components: {
     Panel
@@ -23,14 +25,12 @@ export default {
 
   data () {
     return {
-      songs: [
-        {
-          title: 'Float On',
-          artist: 'Modest Mouse',
-          album: 'Good News for People who love Bad News'
-        }
-      ]
+      songs: null
     }
+  },
+
+  async mounted () {
+    this.songs = (await SongService.index()).data
   }
 }
 </script>
