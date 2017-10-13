@@ -4,8 +4,8 @@ A Vue.js / Express.js web application for keeping track of guitar tabs
 YouTube tutorial: Full Stack Web App using Vue.js & Express.js
 - Part 1 Intro: https://www.youtube.com/watch?v=Fa4cRMaTDUI (DONE)
 - Part 2 Sequelize: https://www.youtube.com/watch?v=xZMwg5z5VGk (DONE)
-- 45' Part 3 Login: https://www.youtube.com/watch?v=H6hM_5ilhqw
-- Part 4:
+- Part 3 Login: https://www.youtube.com/watch?v=H6hM_5ilhqw
+- 0' Part 4: https://www.youtube.com/watch?v=1NSPAz1Qc-I&t=1
 - Part 5 View Song:
 - Part 6 Search:
 - Part 7 Wrapping Up:
@@ -38,3 +38,5 @@ tab-tracker> vue init webpack client
 
 - use vuetify to make nice UI ;)
   - npm install --save vuetify
+
+- use vuex to keep track about the app state
