@@ -1,46 +1,39 @@
 <template>
   <v-layout column>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-2">
-        <v-toolbar dark flat dense class="cyan">
-          </v-toolbar-title>
+      <panel title="Register">
+        <form name="tab-tracker-form" autocomplete="off">
+          <v-text-field
+            v-model="email"
+            label="Email"
+            id="input-email"
+          ></v-text-field>
+          <br>
+
+          <v-text-field
+            v-model="password"
+            label="Password"
+            type="password"
+            id="input-password"
+          ></v-text-field>
+          <br>
+          <div class="error" v-html="error" />
+          <br>
+          <v-btn 
+            dark 
+            class="cyan" 
+            @click="register">
             Register
-          </v-toolbar-title>
-        </v-toolbar>
-
-        <div class="pl-4 pr-4 pt-2 pb-2">
-          <form name="tab-tracker-form" autocomplete="off">
-            <v-text-field
-              v-model="email"
-              label="Email"
-              id="input-email"
-            ></v-text-field>
-            <br>
-
-            <v-text-field
-              v-model="password"
-              label="Password"
-              type="password"
-              id="input-password"
-            ></v-text-field>
-            <br>
-            <div class="error" v-html="error" />
-            <br>
-            <v-btn 
-              dark 
-              class="cyan" 
-              @click="register">
-              Register
-            </v-btn>
-          </form>
-        </div>
-      </div>
+          </v-btn>
+        </form>
+      </panel>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 
 export default {
   name: 'register',
@@ -50,6 +43,10 @@ export default {
       password: '',
       error: null
     }
+  },
+
+  components: {
+    Panel
   },
 
   methods: {
