@@ -20,7 +20,7 @@ module.exports = (app) => {
   )
 
   app.post(
-    '/song',
+    '/songs',
     SongController.post
   )
 }
