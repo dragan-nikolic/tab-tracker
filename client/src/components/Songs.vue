@@ -4,8 +4,8 @@
       <panel title="Songs">
         <v-btn
           slot="action"
-          class="cyan accent-2"
           @click="navigateTo({name: 'songs-create'})"
+          class="cyan accent-2"
           light
           medium
           absolute

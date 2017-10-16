@@ -5,36 +5,48 @@
         <v-text-field
           v-model="song.title"
           label="Title"
+          required
+          :rules="[required]"
           id="input-title"
         ></v-text-field>
 
         <v-text-field
           v-model="song.artist"
           label="Artist"
+          required
+          :rules="[required]"
           id="input-artist"
         ></v-text-field>
 
         <v-text-field
           v-model="song.genre"
           label="Genre"
+          required
+          :rules="[required]"
           id="input-genre"
         ></v-text-field>
 
         <v-text-field
           v-model="song.album"
           label="Album"
+          required
+          :rules="[required]"
           id="input-album"
         ></v-text-field>
 
         <v-text-field
           v-model="song.albumImageUrl"
           label="Album Image URL"
+          required
+          :rules="[required]"
           id="input-album-image-url"
         ></v-text-field>
 
         <v-text-field
           v-model="song.youtubeId"
           label="YouTube ID"
+          required
+          :rules="[required]"
           id="input-youtube-id"
         ></v-text-field>
       </panel>
@@ -44,6 +56,8 @@
         <v-text-field
           v-model="song.tab"
           label="Tab"
+          required
+          :rules="[required]"
           id="input-tab"
           multi-line
         ></v-text-field>
@@ -51,6 +65,8 @@
         <v-text-field
           v-model="song.lyrics"
           label="Lyrics"
+          required
+          :rules="[required]"
           id="input-lyrics"
           multi-line
         ></v-text-field>
@@ -81,7 +97,9 @@ export default {
         youtubeId: null,
         lyrics: null,
         tab: null
-      }
+      },
+
+      required: (value) => !!value || 'Required'
     }
   },
 
