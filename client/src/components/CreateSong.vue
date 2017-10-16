@@ -71,6 +71,11 @@
           multi-line
         ></v-text-field>
       </panel>
+
+      <div class="danger-alert" v-if="error">
+        {{error}}
+      </div>
+
       <v-btn 
         dark 
         class="cyan" 
@@ -99,6 +104,8 @@ export default {
         tab: null
       },
 
+      error: null,
+
       required: (value) => !!value || 'Required'
     }
   },
@@ -109,6 +116,17 @@ export default {
 
   methods: {
     async create () {
+      this.error = null
+
+      const areAllFieldsFilledIn = Object
+        .keys(this.song)
+        .every(key => !!this.song[key])
+
+      if (!areAllFieldsFilledIn) {
+        this.error = 'Please fill in all the required fields!'
+        return
+      }
+
       try {
         await SongService.post(this.song)
         this.$router.push({
