@@ -15,6 +15,18 @@ module.exports = {
     }
   },
 
+  async show (req, res) {
+    const songId = req.params.songId
+    try {
+      const song = await Song.findById(songId)
+      res.send(song)
+    } catch (err) {
+      res.status(500).send({
+        error: `Server error trying to get song ${songId}!`
+      })
+    }
+  },
+
   async post (req, res) {
     try {
       const song = await Song.create(req.body)
