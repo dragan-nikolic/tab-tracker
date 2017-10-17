@@ -1,26 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs6>
-      <panel title="Song Metadata">
-        <v-layout>
-          <v-flex xs6>
-            <div class="song-title">
-              {{song.title}}
-            </div>
-            <div class="song-artist">
-              {{song.artist}}
-            </div>
-            <div class="song-genre">
-              {{song.genre}}
-            </div>
-
-          </v-flex>
-
-          <v-flex xs6>
-            <img class="album-image" :src="song.albumImageUrl" />
-          </v-flex>
-        </v-layout>
-      </panel>
+      <song-metadata :song="song" />
     </v-flex>
 
     <v-flex xs6 class="ml-2">
@@ -35,11 +16,13 @@
 </template>
 
 <script>
+import SongMetadata from './SongMetadata'
 import SongService from '@/services/SongService'
 import Panel from '@/components/Panel'
 
 export default {
   components: {
+    SongMetadata,
     Panel
   },
 
@@ -58,23 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.song-title {
-  font-size: 30px;
-}
-
-.song-artist {
-  font-size: 24px;
-}
-
-.song-genre {
-  font-size: 18px;
-}
-
-.album-image {
-  width: 60%;
-  margin: 0 auto;
-}
-
 textarea {
   width: 100%;
   font-family: monospace;
