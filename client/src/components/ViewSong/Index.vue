@@ -5,24 +5,29 @@
     </v-flex>
 
     <v-flex xs6 class="ml-2">
+      <you-tube :youtubeId="song.youtubeId" />
+    </v-flex>
+    <!-- <v-flex xs6 class="ml-2">
       <panel title="Tabs">
         <textarea
           readonly
           v-model="song.tab">
         </textarea>
       </panel>
-    </v-flex>
+    </v-flex> -->
   </v-layout>
 </template>
 
 <script>
 import SongMetadata from './SongMetadata'
+import YouTube from './YouTube'
 import SongService from '@/services/SongService'
 import Panel from '@/components/Panel'
 
 export default {
   components: {
     SongMetadata,
+    YouTube,
     Panel
   },
 

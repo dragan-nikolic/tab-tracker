@@ -16,6 +16,10 @@
 
       <v-flex xs6>
         <img class="album-image" :src="song.albumImageUrl" />
+        <br>
+        <div class="song-album">
+          {{song.album}}
+        </div>
       </v-flex>
     </v-layout>
   </panel>
@@ -46,6 +50,10 @@ export default {
 
 .song-genre {
   font-size: 18px;
+}
+
+.song-album {
+  font-size: 12px;
 }
 
 .album-image {

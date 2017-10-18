@@ -6,7 +6,7 @@ YouTube tutorial: Full Stack Web App using Vue.js & Express.js
 - Part 2 Sequelize: https://www.youtube.com/watch?v=xZMwg5z5VGk (DONE)
 - Part 3 Login: https://www.youtube.com/watch?v=H6hM_5ilhqw
 - Part 4: https://www.youtube.com/watch?v=1NSPAz1Qc-I&t=1
-- 0' Part 5 View Song: https://www.youtube.com/watch?v=3zw5LgKDMhg&t=2
+- 26' Part 5 View Song: https://www.youtube.com/watch?v=3zw5LgKDMhg&t=2
 - Part 6 Search:
 - Part 7 Wrapping Up:
 
