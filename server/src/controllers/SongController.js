@@ -36,5 +36,22 @@ module.exports = {
         error: `Server error trying to create song ${req.body}!`
       })
     }
-  }
-}
+  },
+
+  async put (req, res) {
+    try {
+      const song = await Song.update(
+        req.body,
+        {
+          where: {
+            id: req.params.songId
+          }
+        }
+      )
+      res.send(song) // req.body
+    } catch (err) {
+      res.status(500).send({
+        error: `Server error trying to update the song ${req.body}!`
+      })
+    }
+  }}
