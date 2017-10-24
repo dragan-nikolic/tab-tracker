@@ -17,8 +17,10 @@
           class="cyan" 
           :to="{
             name: 'songs-edit',
-            params: {
-              songId: song.id
+            params () {
+              return {
+                songId: song.id
+              }
             }
           }">
           Edit
