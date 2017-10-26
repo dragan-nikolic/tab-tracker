@@ -4,7 +4,7 @@
       <router-link
         class="home"
         tag="span"
-        :to="{name: 'home'}">
+        :to="{name: 'songs'}">
         TabTracker
       </router-link>
     </v-toolbar-title>
@@ -42,7 +42,7 @@
         flat
         dark
         @click="logout()">
-        Logout
+        Log Out
       </v-btn>
     </v-toolbar-items>
   </v-toolbar>
