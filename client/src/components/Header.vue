@@ -53,7 +53,7 @@ export default {
   methods: {
     logout () {
       this.$store.dispatch('setToken', null)
-      this.$store.dispatch('setUSer', null)
+      this.$store.dispatch('setUser', null)
       this.$router.push({
         name: 'login'
       })
