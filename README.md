@@ -7,7 +7,7 @@ YouTube tutorial: Full Stack Web App using Vue.js & Express.js
 - Part 3 Login: https://www.youtube.com/watch?v=H6hM_5ilhqw (DONE)
 - Part 4: https://www.youtube.com/watch?v=1NSPAz1Qc-I&t=1 (DONE)
 - Part 5 View Song: https://www.youtube.com/watch?v=3zw5LgKDMhg&t=2 (DONE)
-- 50' Part 6 Search: https://www.youtube.com/watch?v=ipYlztBRpp0&t=3s
+- 57' Part 6 Search: https://www.youtube.com/watch?v=ipYlztBRpp0&t=3s
 - Part 7 Wrapping Up: https://www.youtube.com/watch?v=stx-tUS0vo4&t=14s
 
 GitHub source: https://github.com/codyseibert/tab-tracker

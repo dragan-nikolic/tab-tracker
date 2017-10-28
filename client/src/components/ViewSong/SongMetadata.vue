@@ -27,7 +27,7 @@
         </v-btn>
 
         <v-btn
-          v-if="isUserLoggedIn" 
+          v-if="isUserLoggedIn && !isBookmarked" 
           dark 
           class="cyan" 
           @click="bookmark">
@@ -35,7 +35,7 @@
         </v-btn>
 
         <v-btn 
-          v-if="isUserLoggedIn" 
+          v-if="isUserLoggedIn && isBookmarked" 
           dark 
           class="cyan" 
           @click="unbookmark">
@@ -56,16 +56,34 @@
 
 <script>
 import {mapState} from 'vuex'
+import BookmarkService from '@/services/BookmarkService'
 
 export default {
+  data () {
+    return {
+      isBookmarked: null
+    }
+  },
+
   props: [
     'song'
   ],
 
   computed: {
     ...mapState([
+      'user',
       'isUserLoggedIn'
     ])
+  },
+
+  async mounted () {
+    const bookmark = (await BookmarkService.index({
+      songId: this.song.id,
+      userId: this.user.id
+      // userId: this.$store.state.user.id // for some reason this does not work
+    })).data
+    this.isBookmarked = !!bookmark
+    console.log(`bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.user.id}`)
   },
 
   methods: {
