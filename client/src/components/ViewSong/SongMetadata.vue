@@ -71,28 +71,51 @@ export default {
 
   computed: {
     ...mapState([
-      'user',
       'isUserLoggedIn'
     ])
   },
 
   async mounted () {
-    const bookmark = (await BookmarkService.index({
-      songId: this.song.id,
-      userId: this.user.id
-      // userId: this.$store.state.user.id // for some reason this does not work
-    })).data
-    this.isBookmarked = !!bookmark
-    console.log(`bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.user.id}`)
+    if (!this.isUserLoggedIn) {
+      return
+    }
+
+    try {
+      const bookmark = (await BookmarkService.index({
+        songId: this.song.id,
+        userId: this.$store.state.user.id
+      })).data
+      this.isBookmarked = !!bookmark
+      console.log(
+        `bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.$store.state.user.id}`)
+    } catch (err) {
+      console.log(err)
+    }
   },
 
   methods: {
-    bookmark () {
-      console.log('bookmark')
+    async bookmark () {
+      try {
+        await BookmarkService.post({
+          SongId: this.song.id,
+          UserId: this.$store.state.user.id
+        })
+        this.isBookmarked = true
+      } catch (err) {
+        console.log(err)
+      }
     },
 
-    unbookmark () {
-      console.log('unbookmark')
+    async unbookmark () {
+      try {
+        await BookmarkService.delete({
+          SongId: this.song.id,
+          UserId: this.$store.state.user.id
+        })
+        this.isBookmarked = false
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }

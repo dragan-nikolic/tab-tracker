@@ -28,4 +28,10 @@ module.exports = (app) => {
   app.get(
     '/bookmarks',
     BookmarkController.index)
+  app.post(
+    '/bookmarks',
+    BookmarkController.post)
+  app.delete(
+    '/bookmarks/:bookmarkId',
+    BookmarkController.delete)
 }
