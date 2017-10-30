@@ -27,19 +27,19 @@
         </v-btn>
 
         <v-btn
-          v-if="isUserLoggedIn && !isBookmarked" 
+          v-if="isUserLoggedIn && !bookmark" 
           dark 
           class="cyan" 
-          @click="bookmark">
-          Bookmark
+          @click="setAsBookmark">
+          Set As Bookmark
         </v-btn>
 
         <v-btn 
-          v-if="isUserLoggedIn && isBookmarked" 
+          v-if="isUserLoggedIn && bookmark" 
           dark 
           class="cyan" 
-          @click="unbookmark">
-          Unbookmark
+          @click="unsetAsBookmark">
+          Unset As Bookmark
         </v-btn>
       </v-flex>
 
@@ -61,7 +61,7 @@ import BookmarkService from '@/services/BookmarkService'
 export default {
   data () {
     return {
-      isBookmarked: null
+      bookmark: null
     }
   },
 
@@ -81,11 +81,11 @@ export default {
     }
 
     try {
-      const bookmark = (await BookmarkService.index({
+      this.bookmark = (await BookmarkService.index({
         songId: this.song.id,
         userId: this.$store.state.user.id
       })).data
-      this.isBookmarked = !!bookmark
+
       console.log(
         `bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.$store.state.user.id}`)
     } catch (err) {
@@ -94,25 +94,21 @@ export default {
   },
 
   methods: {
-    async bookmark () {
+    async setAsBookmark () {
       try {
-        await BookmarkService.post({
-          SongId: this.song.id,
-          UserId: this.$store.state.user.id
-        })
-        this.isBookmarked = true
+        this.bookmark = (await BookmarkService.post({
+          songId: this.song.id,
+          userId: this.$store.state.user.id
+        })).data
       } catch (err) {
         console.log(err)
       }
     },
 
-    async unbookmark () {
+    async unsetAsBookmark () {
       try {
-        await BookmarkService.delete({
-          SongId: this.song.id,
-          UserId: this.$store.state.user.id
-        })
-        this.isBookmarked = false
+        await BookmarkService.delete(this.bookmark.id)
+        this.bookmark = null
       } catch (err) {
         console.log(err)
       }
