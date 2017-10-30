@@ -21,7 +21,7 @@ module.exports = {
 
   async post (req, res) {
     try {
-      const {songId, userId} = req.body.params
+      const {songId, userId} = req.body
       const bookmark = await Bookmark.findOne({
         where: {
           SongId: songId,
@@ -30,6 +30,7 @@ module.exports = {
       })
       console.log('------------------------------------')
       console.log(`songId:${songId}, userId:${userId}`)
+      console.log(req.body)
       console.log('------------------------------------')
       if (bookmark) {
         return res.status(400).send({
@@ -37,7 +38,10 @@ module.exports = {
         })
       }
 
-      const newBookmark = await Bookmark.create(req.body)
+      const newBookmark = await Bookmark.create({
+        SongId: songId,
+        UserId: userId
+      })
       console.log('------------------------------------')
       console.log(newBookmark)
       console.log('------------------------------------')
