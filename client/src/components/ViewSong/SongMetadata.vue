@@ -75,21 +75,24 @@ export default {
     ])
   },
 
-  async mounted () {
-    if (!this.isUserLoggedIn) {
-      return
-    }
+  watch: {
+    async song () {
+      console.log('*** watch song called ***')
+      if (!this.isUserLoggedIn) {
+        return
+      }
 
-    try {
-      this.bookmark = (await BookmarkService.index({
-        songId: this.song.id,
-        userId: this.$store.state.user.id
-      })).data
+      try {
+        this.bookmark = (await BookmarkService.index({
+          songId: this.song.id,
+          userId: this.$store.state.user.id
+        })).data
 
-      console.log(
-        `bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.$store.state.user.id}`)
-    } catch (err) {
-      console.log(err)
+        console.log(
+          `bookmark:${this.isBookmarked}, song:${this.song.id}, user:${this.$store.state.user.id}`)
+      } catch (err) {
+        console.log(err)
+      }
     }
   },
 
