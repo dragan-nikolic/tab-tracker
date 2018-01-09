@@ -14,7 +14,10 @@ GitHub source: https://github.com/codyseibert/tab-tracker
 
 # setup development environmnet
 
-* install node v8.5.0 (tutorial uses 8.2.1)
+* install node
+  * latest version used 8.9.3 (with npm v5.5.1)
+  * latest verified version 8.5.0
+  * tutorial uses 8.2.1
 * install vue-cli
   * npm install -g vue-cli
 
@@ -34,7 +37,7 @@ for more info refer to server's package.json
 
 # client
 tab-tracker> vue init webpack client
-- this creates Vue app in the client folder, refer to its Readme for info how to use it
+- this creates Vue app in the client folder, refer to its *Readme* for info how to use it
 
 - use vuetify to make nice UI ;)
   - npm install --save vuetify

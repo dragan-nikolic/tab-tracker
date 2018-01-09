@@ -16,20 +16,20 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "express": "^4.16.1",
-    "joi": "^11.3.4",
+    "express": "^4.16.2",
+    "joi": "^11.4.0",
     "jsonwebtoken": "^8.1.0",
     "morgan": "^1.9.0",
-    "sequelize": "^4.13.5",
-    "sqlite3": "^3.1.8"
+    "sequelize": "^4.30.1",
+    "sqlite3": "^3.1.13"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "nodemon": "^1.12.1",
+    "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.14.10"
   }
 }
